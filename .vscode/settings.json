@@ -1,0 +1,6 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 1,
+    "solargraph.formatting": true,
+    "ruby.format": "rufo"
+}
