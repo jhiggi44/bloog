@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   resources :creators do 
-    resources :drafts
+    resources :posts
   end
 
   root 'home#index'
