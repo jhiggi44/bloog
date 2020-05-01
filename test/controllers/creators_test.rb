@@ -16,6 +16,8 @@ class CreatorsTest < ActionDispatch::IntegrationTest
 
     assert_equal 200, status
 
+    assert_select "form[action=?]", "/creators/#{creator[:id]}/posts/new"
+
     assert_select "label", "Title" do
       assert_select 'input#title'
     end
