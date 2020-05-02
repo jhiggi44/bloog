@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+creator = Creator.create(name: 'Thor, Son of Odin')
+
+Post.create(creator_id: creator.id, title: "God of Thunder", content: "One day my trusty hammer and I...")
+

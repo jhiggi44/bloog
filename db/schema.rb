@@ -15,4 +15,13 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table :creators, force: :cascade do |t|
+    t.string :name, null: false
+  end
+
+  create_table :posts, force: :cascade do |t|
+    t.integer :creator_id
+    t.string :title, null: false
+    t.text :content, null: true
+  end
 end
