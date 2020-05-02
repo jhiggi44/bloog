@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   def create
     creator_id = params[:creator_id]
     post = params[:post]
-    redirect_to "/creators/#{creator_id}" if Post.new(creator_id: creator_id, title: post[:title], content: post[:content]).save
+    if Post.new(creator_id: creator_id, title: post[:title], content: post[:content]).save
+      redirect_to "/creators/#{creator_id}"
+    end
   end
 
   def new
