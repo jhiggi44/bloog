@@ -13,4 +13,7 @@ class PostsController < ApplicationController
     @creator = Creator.find(params[:creator_id])
     @post = Post.new(creator_id: @creator.id)
   end
+
+  def show
+  end
 end
