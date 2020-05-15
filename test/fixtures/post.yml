@@ -1,0 +1,9 @@
+peter_post_1:
+  creator: peter_parker
+  title: "The Night Gwen Stacy Died"
+  content: "I'm sad about Gwen..."
+
+peter_post_2:
+  creator: peter_parker
+  title: "The Night Uncle Ben Died"
+  content: "I'm sad about Uncle Ben..."
