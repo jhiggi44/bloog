@@ -20,5 +20,9 @@ class CreatorsTest < ActionDispatch::IntegrationTest
         assert_select 'a[href=?]', "/creators/#{creator[:id]}/posts/#{post.id}"
       end
     end
+
+    assert_select 'a', 'Write New Post' do
+      assert_select 'a[href=?]', "/creators/#{creator[:id]}/posts/new"
+    end
   end
 end
