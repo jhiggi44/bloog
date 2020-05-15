@@ -34,8 +34,13 @@ class PostsTest < ActionDispatch::IntegrationTest
 
   test 'show' do
    creator = creator(:peter_parker)
-   get "/creators/#{creator[:id]}/posts/#{creator.posts.first.id}"
+   post = creator.posts.first
+   get "/creators/#{creator[:id]}/posts/#{post.id}"
 
    assert_equal 200, status
+
+   assert_select "h2", post.title
+   assert_select "h4", "By: #{creator[:name]}"
+   assert_select "p", post.content
   end
 end
