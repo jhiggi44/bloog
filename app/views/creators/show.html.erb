@@ -1,2 +1,7 @@
-<h1>Hello <%= @creator[:name] %></h1>
-<p> What do you need done today?<p>
+<h1><%= @creator[:name] %></h1>
+<h2>My Posts:</h2>
+<% @creator.posts.each do |post| %>
+ <h3><%= link_to post.title, "/creators/#{@creator.id}/posts/#{post.id}"%></h3>
+<% end %>
+
+<%= link_to "Write New Post", "/creators/#{@creator.id}/posts/new"%>

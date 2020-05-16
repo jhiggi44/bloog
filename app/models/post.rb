@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Post < ActiveRecord::Base
- belongs_to :creator
+  belongs_to :creator
 end
