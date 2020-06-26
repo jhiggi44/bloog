@@ -1,0 +1,7 @@
+<h1><%= @user[:name] %></h1>
+<h2>My Posts:</h2>
+<% @user.posts.each do |post| %>
+ <h3><%= link_to post.title, "/creators/#{@user.id}/posts/#{post.id}"%></h3>
+<% end %>
+
+<%= link_to "Write New Post", "/creators/#{@user.id}/posts/new"%>

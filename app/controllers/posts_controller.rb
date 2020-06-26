@@ -2,16 +2,16 @@
 
 class PostsController < ApplicationController
   def create
-    creator_id = params[:creator_id]
+    user_id = params[:user_id]
     post = params[:post]
-    if Post.new(creator_id: creator_id, title: post[:title], content: post[:content]).save
-      redirect_to "/creators/#{creator_id}"
+    if Post.new(user_id: user_id, title: post[:title]).save
+      redirect_to "/users/#{user_id}"
     end
   end
 
   def new
-    @creator = Creator.find(params[:creator_id])
-    @post = Post.new(creator_id: @creator.id)
+    @user = User.find(params[:user_id])
+    @post = Post.new(user_id: @user.id)
   end
 
   def show

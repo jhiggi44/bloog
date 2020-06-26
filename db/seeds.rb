@@ -7,30 +7,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-creator = Creator.create(name: 'Thor, Son of Odin')
+user = User.create(name: 'Thor, Son of Odin')
 
 Post.create(
-  creator_id: creator.id,
-  title: 'God of Thunder',
-  content: 'One day my trusty hammer and I...'
-)
-Post.create(
-  creator_id: creator.id,
+  user_id: user.id,
   title: 'The Day I Lost My Hammer',
-  content: 'I was sad the day I lost my hammer...'
 )
 Post.create(
-  creator_id: creator.id,
+  user_id: user.id,
   title: "Because That's What Heroes Do",
-  content: "I don't want to brag, but I'm a bit of a hero..."
 )
 Post.create(
-  creator_id: creator.id,
-  title: 'Loki Sucks',
-  content: 'I bet you already know this, but Loki sucks...'
-)
-Post.create(
-  creator_id: creator.id,
+  user_id: user.id,
   title: 'Noobmaster69',
-  content: 'You can just call me Noobmaster69 now...'
 )
