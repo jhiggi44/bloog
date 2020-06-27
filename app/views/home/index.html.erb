@@ -1,3 +1,5 @@
 <h1>Welcome to Blog</h1>
-<% post = Post.all.sort_by(&:created_at).reverse.first %>
-<h3><%= link_to post.title, "/users/#{post.user.id}/posts/#{post.id}"%></h3>
+<% posts = Post.all %>
+<% posts.each do |post| %>
+ <h3><%= link_to post.title, "/users/#{post.user.id}/posts/#{post.id}"%></h3>
+<% end %>

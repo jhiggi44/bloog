@@ -10,14 +10,24 @@
 user = User.create(name: 'Thor, Son of Odin')
 
 Post.create(
-  user_id: user.id,
+  user: user,
   title: 'The Day I Lost My Hammer',
 )
-Post.create(
+
+heroes_post = Post.create(
   user_id: user.id,
   title: "Because That's What Heroes Do",
 )
-Post.create(
-  user_id: user.id,
-  title: 'Noobmaster69',
+
+Sections::Text.create(
+  position: 0,
+  content: "I'm going to quote myself...",
+  post: heroes_post
 )
+
+Sections::Quote.create(
+  position: 1,
+  content: "Because that's what heroes do!",
+  post: heroes_post
+)
+
