@@ -1,3 +1,7 @@
 module Sections
- class Quote < Section; end
+ class Quote < Section
+  def kind
+   "quote"
+  end
+ end
 end

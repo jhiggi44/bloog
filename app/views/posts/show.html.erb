@@ -1,8 +1,4 @@
 <h2><%= @post.title %></h2>
-<p><%= @post.sections.first.contents["text"] %></p>
-<blockquote cite=<%= @post.sections.second.contents["source"] %>>
- <p><%= @post.sections.second.contents["quote"] %></p>
- <footer>
-  <%= link_to(@post.sections.second.contents["author"], @post.sections.second.contents["source"]) %>
- <footer>
-</blockquote>
+<% @sections.each do |section| %>
+ <%= render partial: section.kind, locals: {contents: section.contents} %>
+<% end %>
