@@ -3,7 +3,7 @@ class CreateSections < ActiveRecord::Migration[5.2]
     create_table :sections do |t|
       t.string :type
       t.integer :position
-      t.text :content
+      t.jsonb :contents, null: false, default: '{}'
       t.timestamps
     end
   end

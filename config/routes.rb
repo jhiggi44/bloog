@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :users do
-    resources :posts
-  end
-
+  resources :users
+  resources :posts
   root 'home#index'
 end

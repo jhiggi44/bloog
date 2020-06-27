@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_223634) do
   create_table "sections", force: :cascade do |t|
     t.string "type"
     t.integer "position"
-    t.text "content"
+    t.jsonb "contents", default: "{}", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "post_id"

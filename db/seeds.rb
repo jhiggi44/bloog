@@ -16,18 +16,22 @@ Post.create(
 
 heroes_post = Post.create(
   user_id: user.id,
-  title: "Because That's What Heroes Do",
+  title: "What Heroes Do",
 )
 
 Sections::Text.create(
   position: 0,
-  content: "I'm going to quote myself...",
+  contents: { text: "I'm going to quote myself..." },
   post: heroes_post
 )
 
 Sections::Quote.create(
   position: 1,
-  content: "Because that's what heroes do!",
+  contents: { 
+    quote: "Because that's what heroes do!", 
+    source: "https://www.youtube.com/watch?v=-N-kHJSj0vk",
+    author: "Thor, A Hero"
+   },
   post: heroes_post
 )
 

@@ -1,7 +1,3 @@
-peter_post_gwen:
-  user: peter_parker
-  title: "The Night Gwen Stacy Died"
-
-peter_post_ben:
-  user: peter_parker
-  title: "The Night Uncle Ben Died"
+thor_hero:
+  user: thor
+  title: "What Heroes Do"

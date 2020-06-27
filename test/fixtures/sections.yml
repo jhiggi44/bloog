@@ -1,18 +1,16 @@
-peter_post_gwen_intro:
+thor_hero_intro:
   type: "Sections::Text"
   position: 0
-  content: "I'm sad about Gwen Stacy. She used to say:"
-  post: peter_post_gwen
+  contents: { text: "I'm going to quote myself..." }
+  post: thor_hero
 
-peter_post_gwen_quote:
+thor_hero_quote:
   type: "Sections::Quote"
   position: 1
-  content: "It's easy to feel hopeful on a beautiful day like today, but there will be dark days ahead of us too. There will be days where you feel all alone, and that's when hope is needed most"
-  post: peter_post_gwen
-
-peter_post_gwen_ending:
-  type: "Sections::Text"
-  position: 2
-  content: "She will be missed"
-  post: peter_post_gwen
+  contents: { 
+    quote: "Because that's what heroes do!", 
+    source: "https://www.youtube.com/watch?v=-N-kHJSj0vk",
+    author: "Thor, A Hero"
+  }
+  post: thor_hero
 
