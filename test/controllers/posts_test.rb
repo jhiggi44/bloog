@@ -9,7 +9,6 @@ class PostsTest < ActionDispatch::IntegrationTest
   test 'create' do
   end
 
-
   test 'show' do
   end
 end

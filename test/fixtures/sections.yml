@@ -1,0 +1,9 @@
+peter_post_1_section_1:
+  position: 0
+  contents: { display: "text", content: "Some text." }
+  post: peter_post_1
+
+peter_post_1_section_2:
+  position: 1
+  contents: { display: "text", content: "Some more text." }
+  post: peter_post_1
