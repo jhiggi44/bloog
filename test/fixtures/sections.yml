@@ -1,9 +1,22 @@
-peter_post_1_section_1:
+thor_post_hero_header:
   position: 0
-  contents: { display: "text", content: "Some text." }
-  post: peter_post_1
+  contents: { display: "header", text: "The Heroes Dilemma" }
+  post: thor_hero
 
-peter_post_1_section_2:
+thor_post_hero_text:
   position: 1
-  contents: { display: "text", content: "Some more text." }
-  post: peter_post_1
+  contents: { 
+    display: "text", 
+    text: "What should a hero do when they encounter problems. One of the best heroes once said," 
+  }
+  post: thor_hero
+
+thor_hero_quote:
+  position: 2
+  contents: { 
+    display: "quote",
+    author: "Thor, Son of Odin",
+    source: "https://www.youtube.com/watch?v=-N-kHJSj0vk",
+    text: "I choose to run towards my problems, and not away from them. Because that's what heroes do." 
+  }
+  post: thor_hero
