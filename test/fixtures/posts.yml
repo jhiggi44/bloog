@@ -1,3 +1,9 @@
 thor_hero:
   user: thor
   title: "Because That's What Heroes Do"
+  created_at: <%= 5.days.ago %> 
+
+thor_revolution:
+  user: thor
+  title: "Let's Start a Revolution"
+  created_at: <%= 3.days.ago %> 
