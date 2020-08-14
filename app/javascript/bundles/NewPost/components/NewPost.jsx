@@ -1,14 +1,20 @@
 import React, { useReducer } from 'react';
 import TextSectionInput from "./TextSectionInput"
 
-const initialState = [];
+const initialState = {
+  title: "Some Default",
+  sections: []
+};
 
-function reducer(state, action) {
+function reducer(stateToUpdate, action) {
+  let state = {...stateToUpdate}
   switch (action.type) {
+    case 'update_title':
+      state["title"] = action.title
+      return state;
     case 'update_section':
-      let new_state = [...state]
-      new_state[action.section_position] = action.section_details
-      return new_state;
+      state["sections"][action.section_position] = action.section_details
+      return state;
     default:
       throw new Error();
   }
@@ -26,14 +32,13 @@ function handleSubmit(event, post, user_id) {
     'Content-Type': 'application/json',
     'X-CSRF-TOKEN': token
   },
-  body: JSON.stringify({ user_id: user_id, post: post }),
+  body: JSON.stringify({ post: post }),
  })
- .then(response => response.json())
- .then(data => {
-   console.log('Success:', data);
- })
- .catch((error) => {
-   console.error('Error:', error);
+ .then(response => {
+   console.log(response.status)
+   if (response.status === 200) {
+    window.location.replace(response.url);
+   }
  });
 }
 
@@ -48,12 +53,25 @@ export default function NewPost() {
   });
  }
 
+ function updateTitle(title) {
+  dispatch({
+   type: "update_title", 
+   title: title,
+  });
+ }
+
  return (
   <main>
    <h1>New Post</h1>
    <form>
     <label htmlFor="title">Title</label>
-    <input type="text" id="Title" defaultValue="Some Awesome Title" /><br/>
+    <input 
+      type="text" 
+      id="Title" 
+      value={state["title"]} 
+      onChange={(e) => { updateTitle(e.target.value) }}
+    />
+    <br/>
     <TextSectionInput position={0} updateSection={updateSection} />
     <TextSectionInput position={1} updateSection={updateSection} />
     <input 

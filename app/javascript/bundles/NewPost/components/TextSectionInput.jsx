@@ -10,9 +10,9 @@ export default function TextSectionInput({position, updateSection}) {
     cols="30" 
     rows="10" 
     value={text} 
-    onChange={(event) => {
+    onChange={(event) => { 
      setText(event.target.value)
-     updateSection(position, {type: "text", value: text})
+     updateSection(position, {type: "text", value: event.target.value})
     }}
    />
   </fieldset>
