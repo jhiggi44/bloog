@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import TextSectionInput from "./TextSectionInput"
+import TitleInput from "./TitleInput"
 
 const initialState = {
   title: "Some Default",
@@ -62,13 +63,7 @@ export default function NewPost() {
 
  return (
    <form>
-    <label htmlFor="title">Title</label>
-    <input 
-      type="text" 
-      id="Title" 
-      value={state["title"]} 
-      onChange={(e) => { updateTitle(e.target.value) }}
-    />
+    <TitleInput updateTitle={updateTitle} />
     <br/>
     <TextSectionInput position={0} updateSection={updateSection} />
     <TextSectionInput position={1} updateSection={updateSection} />
