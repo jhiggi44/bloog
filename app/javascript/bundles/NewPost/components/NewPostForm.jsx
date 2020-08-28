@@ -64,7 +64,6 @@ export default function NewPost() {
  return (
    <form>
     <TitleInput updateTitle={updateTitle} />
-    <br/>
     <TextSectionInput position={0} updateSection={updateSection} />
     <TextSectionInput position={1} updateSection={updateSection} />
     <input 

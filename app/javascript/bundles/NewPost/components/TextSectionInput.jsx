@@ -9,14 +9,18 @@ export default function TextSectionInput({position, updateSection}) {
  }
 
  return (
-  <fieldset>
-   <textarea 
-    name="basic_text" 
-    cols="30" 
-    rows="10" 
-    value={text} 
-    onChange={handleUpdate}
-   />
-  </fieldset>
+  <label>
+   <span>{`Section ${position}:`}</span>
+   <fieldset>
+    <textarea 
+     name="basic_text" 
+     cols="30" 
+     rows="10" 
+     value={text} 
+     onChange={handleUpdate}
+     style={{ width: "100%" }}
+    />
+   </fieldset>
+  </label>
  );
 }
