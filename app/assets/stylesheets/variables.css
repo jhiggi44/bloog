@@ -1,0 +1,24 @@
+:root {
+ --true-black:#000;
+ --dark:#2f3640;
+ --dark-accent: #353b48;
+ --midnight: #192a56;
+ --midnight-accent: #273c75;
+ --sea: #40739e;
+ --sea-accent: #487eb0;
+ --blue: #0097e6;
+ --blue-accent: #00a8ff;
+ --green: #44bd32;
+ --green-accent: #4cd137;
+ --grey: #718093;
+ --grey-accent: #7f8fa6;
+ --true-white: #fff;
+ --white: #f5f6fa;
+ --white-accent: #dcdde1;
+ --orange: #e1b12c;
+ --orange-accent: #fbc531;
+ --purple: #8c7ae6;
+ --purple-accent: #9c88ff;
+ --red: #c23616;
+ --red-accent: #e84118;
+}
