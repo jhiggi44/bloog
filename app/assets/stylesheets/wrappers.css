@@ -25,6 +25,7 @@
  height: 100%;
  padding: .4em 0 0 .4em;
  align-self: flex-start;
+ font-size: .8rem;
 }
 
 .sections-wrapper {
@@ -43,7 +44,7 @@
 }
 
 .text-section-label-wrapper > span {
- font-size: .8em;
+ font-size: .8rem;
 }
 
 .text-section-label-wrapper > fieldset {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 
-export default function TextSectionInput({position, updateSection}) {
- const [text, setText] = useState("This is a default from Hooks!")
+export default function TextSectionInput({position, sectionText, updateSection}) {
+ const [text, setText] = useState(sectionText)
 
  function handleUpdate(event) {
   setText(event.target.value)

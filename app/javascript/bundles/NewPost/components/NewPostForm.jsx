@@ -1,10 +1,34 @@
 import React, { useReducer } from 'react';
 import TextSectionInput from "./TextSectionInput"
 import TitleInput from "./TitleInput"
+import AddSectionButton from "./AddSectionButton"
+
+
+function handleSubmit(event, post, user_id) {
+  event.preventDefault();
+ 
+  const token = 
+       document.querySelector('[name=csrf-token]').content
+ 
+  fetch(`http://localhost:8080/users/${user_id}/posts`, {
+   method: 'POST',
+   headers: {
+     'Content-Type': 'application/json',
+     'X-CSRF-TOKEN': token
+   },
+   body: JSON.stringify({ post: post }),
+  })
+  .then(response => {
+    console.log(response.status)
+    if (response.status === 200) {
+     window.location.replace(response.url);
+    }
+  });
+ }
 
 const initialState = {
   title: "Some Default",
-  sections: []
+  sections: [{type:"text"}]
 };
 
 function reducer(stateToUpdate, action) {
@@ -16,31 +40,12 @@ function reducer(stateToUpdate, action) {
     case 'update_section':
       state["sections"][action.section_position] = action.section_details
       return state;
+    case 'add_section':
+      state["sections"].push({ type: action.section_details.type })
+      return state;
     default:
       throw new Error();
   }
-}
-
-function handleSubmit(event, post, user_id) {
- event.preventDefault();
-
- const token = 
-      document.querySelector('[name=csrf-token]').content
-
- fetch(`http://localhost:8080/users/${user_id}/posts`, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'X-CSRF-TOKEN': token
-  },
-  body: JSON.stringify({ post: post }),
- })
- .then(response => {
-   console.log(response.status)
-   if (response.status === 200) {
-    window.location.replace(response.url);
-   }
- });
 }
 
 export default function NewPost() {
@@ -57,20 +62,37 @@ export default function NewPost() {
  function updateTitle(title) {
   dispatch({
    type: "update_title", 
-   title: title,
+   title: title
   });
+ }
+
+ function addSection(details) {
+   dispatch({
+     type: "add_section",
+     section_details: details
+   });
  }
 
  return (
    <form>
     <TitleInput updateTitle={updateTitle} />
     <div className="bg-dark-accent sections-wrapper">
-      <TextSectionInput position={0} updateSection={updateSection} />
-      <TextSectionInput position={1} updateSection={updateSection} />
+      { 
+        state.sections.map((section, i) => {
+          return <TextSectionInput 
+            key={i}
+            position={i} 
+            sectionText={section.value || "Default Text"}
+            updateSection={updateSection}
+          />
+        }) 
+      }
+      <AddSectionButton addSection={addSection} />
     </div>
     <input 
+     className="submit-button"
      type="submit" 
-     defaultValue="Submit" 
+     value="Submit" 
      onClick={(e) => { handleSubmit(e, state, 1) }} />
    </form>
  );
