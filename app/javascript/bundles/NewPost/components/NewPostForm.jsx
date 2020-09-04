@@ -64,8 +64,10 @@ export default function NewPost() {
  return (
    <form>
     <TitleInput updateTitle={updateTitle} />
-    <TextSectionInput position={0} updateSection={updateSection} />
-    <TextSectionInput position={1} updateSection={updateSection} />
+    <div className="bg-dark-accent sections-wrapper">
+      <TextSectionInput position={0} updateSection={updateSection} />
+      <TextSectionInput position={1} updateSection={updateSection} />
+    </div>
     <input 
      type="submit" 
      defaultValue="Submit" 

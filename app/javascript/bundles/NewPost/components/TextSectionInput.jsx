@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TextareaAutosize from 'react-autosize-textarea';
 
 export default function TextSectionInput({position, updateSection}) {
  const [text, setText] = useState("This is a default from Hooks!")
@@ -9,16 +10,14 @@ export default function TextSectionInput({position, updateSection}) {
  }
 
  return (
-  <label>
-   <span>{`Section ${position}:`}</span>
+  <label className="text-section-label-wrapper">
+   <span className="white-accent" >{`Section ${position}:`}</span>
    <fieldset>
-    <textarea 
-     name="basic_text" 
-     cols="30" 
-     rows="10" 
+    <TextareaAutosize 
+     name={`Section ${position}`} 
      value={text} 
      onChange={handleUpdate}
-     style={{ width: "100%" }}
+     className="bg-dark-accent white"
     />
    </fieldset>
   </label>

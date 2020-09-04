@@ -17,17 +17,7 @@
  padding: .4em .4em .15em .8em;
  display: inline-block;
  flex-grow: 1;
- border: none;
- border-bottom: .25em solid var(--dark-accent);
- text-align: center;
-}
-
-.flex-label-wrapper-for-text-input > input:focus {
- outline: none;
- border: none;
- border-bottom: .25em solid;
- border-image-source: linear-gradient(to right, var(--dark-accent) 5%, var(--green-accent), var(--green) 50%, var(--green-accent) 70%, var(--dark-accent) 95%);
- border-image-slice: 1;
+ text-align: left;
 }
 
 .flex-label-wrapper-for-text-input > span {
@@ -35,4 +25,51 @@
  height: 100%;
  padding: .4em 0 0 .4em;
  align-self: flex-start;
+}
+
+.sections-wrapper {
+ box-sizing: border-box;
+ width: 100%;
+ padding: .8em;
+}
+
+.text-section-label-wrapper {
+ width: 99%;
+ margin: .8em 0;
+ display: flex;
+ flex-direction: column;
+ flex-wrap: nowrap;
+ align-items: left;
+}
+
+.text-section-label-wrapper > span {
+ font-size: .8em;
+}
+
+.text-section-label-wrapper > fieldset {
+ padding: .6em 0;
+}
+
+.text-section-label-wrapper > fieldset > textarea {
+ width: 100%;
+ box-sizing: border-box;
+ resize: none;
+ display: block;
+ overflow: hidden;
+ padding: .6em 0;
+}
+
+.flex-label-wrapper-for-text-input > input,
+.text-section-label-wrapper > fieldset > textarea {
+ border: none;
+ border-bottom: .25em solid var(--dark-accent);
+}
+
+.flex-label-wrapper-for-text-input > input:focus,
+.text-section-label-wrapper > fieldset > textarea:focus {
+ outline: none;
+ border: none;
+ border-bottom: .25rem solid;
+ border-image-source: linear-gradient(to right, var(--dark-accent) 5%, var(--green-accent), var(--green) 50%, var(--green-accent) 70%, var(--dark-accent) 95%);
+ border-image-slice: 1;
 }
