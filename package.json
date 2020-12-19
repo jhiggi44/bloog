@@ -2,9 +2,15 @@
   "name": "blog",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@rails/webpacker": "3.5",
+    "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-autosize-textarea": "^7.1.0",
+    "react-dom": "^16.13.1",
+    "react-on-rails": "12.0.1"
   },
   "devDependencies": {
-    "webpack-dev-server": "3.1.11"
+    "webpack-dev-server": "2.11.2"
   }
 }

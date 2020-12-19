@@ -1,8 +1,1 @@
-<h1>New Post</h1>
-<%= form_for [@creator, @post] do |f| %>
-<label>
-  Title
-  <%= f.text_field :title %>
-</label>
-<%= f.submit "Create Post" %>
-<% end %>
+<%= react_component("NewPost", prerender: false) %>

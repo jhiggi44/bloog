@@ -6,7 +6,16 @@ class PostsTest < ActionDispatch::IntegrationTest
   test 'new' do
   end
 
-  test 'create' do
+  test 'create post with multiple sections' do
+    user = users(:thor)
+    params = {
+      user_id: user.id,
+      post: { title: "A Title", sections: [{ type: "text", value: "A section's text" }, { type: "text", value: "Another section's text." }] }
+    }
+
+    assert_difference ->{ Post.count } => 1, ->{ Section.count } => 2 do
+      post "/users/#{user.id}/posts", params: params
+    end
   end
 
   test 'show' do

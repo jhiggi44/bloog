@@ -1,0 +1,19 @@
+.white {
+ color: var(--white);
+}
+
+.white-accent {
+ color: var(--white-accent);
+}
+
+.bg-dark {
+ background-color: var(--dark);
+}
+
+.bg-dark-accent {
+ background-color: var(--dark-accent)
+}
+
+.bg-midnight {
+ background-color: var(--midnight)
+}

@@ -1,0 +1,32 @@
+h1, h2, h3, h4, h5, h6, label {
+ font-family: 'Montserrat', sans-serif;
+ font-weight: bold
+}
+
+p, textarea, input {
+ font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+ font-size: 2em;
+}
+
+h2 {
+ font-size: 1.8em;
+}
+
+label {
+ font-size: 1em;
+}
+
+input {
+ font-size: 1.8em;
+}
+
+.open-sans {
+ font-family: 'Open Sans', sans-serif;
+}
+
+.montserrat {
+ font-family: 'Montserrat', sans-serif;
+}

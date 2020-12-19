@@ -1,0 +1,76 @@
+.app-wrapper {
+ max-width: 1280px;
+ width: 90%;
+ margin: 10px auto;
+}
+
+.flex-label-wrapper-for-text-input {
+ max-width: 100%;
+ margin: 1em 0 1.5em 0;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ align-items: center;
+}
+
+.flex-label-wrapper-for-text-input > input {
+ padding: .4em .4em .15em .8em;
+ display: inline-block;
+ flex-grow: 1;
+ text-align: left;
+}
+
+.flex-label-wrapper-for-text-input > span {
+ display: inline-block; 
+ height: 100%;
+ padding: .4em 0 0 .4em;
+ align-self: flex-start;
+ font-size: .8rem;
+}
+
+.sections-wrapper {
+ box-sizing: border-box;
+ width: 100%;
+ padding: .8em;
+}
+
+.text-section-label-wrapper {
+ width: 99%;
+ margin: .8em 0;
+ display: flex;
+ flex-direction: column;
+ flex-wrap: nowrap;
+ align-items: left;
+}
+
+.text-section-label-wrapper > span {
+ font-size: .8rem;
+}
+
+.text-section-label-wrapper > fieldset {
+ padding: .6em 0;
+}
+
+.text-section-label-wrapper > fieldset > textarea {
+ width: 100%;
+ box-sizing: border-box;
+ resize: none;
+ display: block;
+ overflow: hidden;
+ padding: .6em 0;
+}
+
+.flex-label-wrapper-for-text-input > input,
+.text-section-label-wrapper > fieldset > textarea {
+ border: none;
+ border-bottom: .25em solid var(--dark-accent);
+}
+
+.flex-label-wrapper-for-text-input > input:focus,
+.text-section-label-wrapper > fieldset > textarea:focus {
+ outline: none;
+ border: none;
+ border-bottom: .25rem solid;
+ border-image-source: linear-gradient(to right, var(--dark-accent) 5%, var(--green-accent), var(--green) 50%, var(--green-accent) 70%, var(--dark-accent) 95%);
+ border-image-slice: 1;
+}

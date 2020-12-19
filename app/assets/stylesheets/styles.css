@@ -1,0 +1,6 @@
+.submit-button {
+ margin: 1em 0;
+ border: none;
+ border-radius: 2px;
+ background-color: var(--green);
+}
